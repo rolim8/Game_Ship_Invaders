@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-group description="" sid="470346004029405" title="System">
+            <sub-events>
+                <event-block sid="686288475737326">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="199506694623950" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="845805566535553" type="Enemy">
+                            <param id="0" name="Obstacle">obj_box</param>
+                        </action>
+                        <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="297519301928679" type="Enemy" />
+                    </actions>
+                </event-block>
+                <event-block sid="645477735305800">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="652396088291997" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="660724417474689" type="Player_anim">
+                            <param id="0" name="Object">Player_box</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="765966541802988" type="Player_anim">
+                            <param id="0" name="Animation">player_box.direction</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="946801722003759" type="Gun">
+                            <param id="0" name="Object">Player_box</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="203599973901996" type="Gun">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="857139512825069" type="whiteflashlight">
+                            <param id="0" name="Object">Player_box</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="729581278862824" type="Cam">
+                            <param id="0" name="X">lerp(Self.X, Player_box.X, 0.1)</param>
+                            <param id="1" name="Y">lerp(Self.Y, Player_box.Y, 0.1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Player Actions" sid="823901465098584" title="Player">
+            <sub-events>
+                <event-group description="" sid="962491600763667" title="Player Moves">
+                    <sub-events>
+                        <event-block sid="297237589648874">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="107341355384509" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="173992775622279" type="Player_box">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="909152047026832" type="Player_box">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Value">&quot;walk_u&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="945320404488011">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="273549743601059" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="724559320119868" type="Player_box">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="497607825711100" type="Player_box">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Value">&quot;walk_l&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="400317715721571">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="259168733422732" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="764651511050248" type="Player_box">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="966933110779413" type="Player_box">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Value">&quot;walk_d&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="719777339255123">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="983311199324621" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="602791060964444" type="Player_box">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="815967739774615" type="Player_box">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Value">&quot;walk_r&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="944391859370152">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="256086823877090" type="Keyboard">
+                                    <param id="0" name="Key">82</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-26" name="Restart layout" sid="912634434396562" type="System" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="365822268025570">
+                            <conditions>
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="841577912102406" type="Player_box" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="686867233273670" type="Player_anim">
+                                    <param id="0" name="Speed">15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="530362560085241">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="143768797437171" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="620109911329480" type="Player_anim">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="787836826177589" type="Player_anim">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="432742523995079" title="Weapon">
+                    <sub-events>
+                        <event-block sid="958541900946056">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="797665473855467" type="Gun">
+                                    <param id="0" name="Within">90</param>
+                                    <param id="1" name="Angle">270</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-29" name="Move to object" sid="704645282303496" type="Gun">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">Player_anim</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="641762779095930">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="375264363326445" type="Gun">
+                                    <param id="0" name="Within">90</param>
+                                    <param id="1" name="Angle">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-29" name="Move to object" sid="201680415320764" type="Gun">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">Player_anim</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="409399563926532">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="745118828016944" type="Gun">
+                                    <param id="0" name="Within">90</param>
+                                    <param id="1" name="Angle">0</param>
+                                </condition>
+                                <condition id="8" name="Is flipped" sid="472041321297773" type="Gun" />
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Set flipped" sid="655939110464151" type="Gun">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="249095728692849">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="419876051840132" type="Gun">
+                                    <param id="0" name="Within">90</param>
+                                    <param id="1" name="Angle">180</param>
+                                </condition>
+                                <condition id="8" inverted="1" name="Is flipped" sid="658124482685024" type="Gun" />
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Set flipped" sid="797253584387323" type="Gun">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="623262315638157">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="318107437373244" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="237306329149804" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="238362443751042" type="System">
+                                    <param id="0" name="Object to create">Bullet</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">Gun.ImagePointX(1)</param>
+                                    <param id="3" name="Y">Gun.ImagePointY(1)</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="498103085845089" type="Bullet">
+                                    <param id="0" name="Angle">Gun.Angle + random(-10,10)</param>
+                                </action>
+                                <action disabled="1" id="-23" name="Move at angle" sid="835390579495216" type="Player_box">
+                                    <param id="0" name="Angle">angle(Bullet.X, Bullet.Y,Player_anim.X, Player_anim.Y)</param>
+                                    <param id="1" name="Distance">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="Magic Actions" sid="837674030990087" title="Magic">
+            <sub-events>
+                <event-block sid="617717987151197">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="592485244613723" type="Bullet" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="414341090495180" type="Bullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="398028373394755">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="426353323413668" type="Bullet">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="203719702433884" type="Bullet" />
+                        <action id="-12" name="Subtract from" sid="955872079832345" type="Enemy">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="630312292221238" type="Cam">
+                            <param id="0" name="Magnitude">3</param>
+                            <param id="1" name="Duration">0.1</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="207858221234937">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="765715511570634" type="Bullet">
+                            <param id="0" name="Object">obj_box</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="403881999592659" type="Bullet" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Enemy Actions" sid="761680486828622" title="Enemy">
+            <sub-events>
+                <event-block sid="620372003111285">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="861515338610809" type="Enemy">
+                            <param id="0" name="Object">Player_box</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="154842119236047" type="Cam">
+                            <param id="0" name="Magnitude">6</param>
+                            <param id="1" name="Duration">0.1</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="564953990357893">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="545931600834887" type="Enemy">
+                            <param id="0" name="Instance variable">Life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="759881697793027" type="Enemy" />
+                    </actions>
+                </event-block>
+                <event-block sid="392371379616293">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="393867694126811" type="Enemy">
+                            <param id="0" name="Object">Player_box</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="378597949732805" type="System">
+                            <param id="0" name="Group name">&quot;Hunting&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="680457498479429">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="336781937628082" type="Enemy">
+                            <param id="0" name="Object">Player_box</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="123884528860565" type="System">
+                            <param id="0" name="Group name">&quot;Hunting&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="Try to Hunting Player" inactive="1" sid="686242415684242" title="Hunting">
+                    <sub-events>
+                        <event-block sid="711973123270269">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="165687945028107" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="505359009353221" type="Enemy">
+                                    <param id="0" name="X">player_box.X</param>
+                                    <param id="1" name="Y">player_box.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="916820343540859">
+                            <conditions>
+                                <condition behavior="Pathfinding" id="0" name="On path found" sid="658398589944900" type="Enemy" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="1" name="Move along path" sid="912862554989917" type="Enemy" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="223608743967828">
+                            <conditions>
+                                <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="633188405837339" type="Enemy" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="799963400007470" type="Enemy">
+                                    <param id="0" name="X">player_box.X</param>
+                                    <param id="1" name="Y">player_box.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

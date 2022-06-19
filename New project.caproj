@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>New project</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>19kfzjmi8r32c</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="multiply">Multiply</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>450</width>
+        <height>250</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Player_box" sid="163190897282325">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="direction" sid="361014538989241" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="754743656397577">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="782213468835392">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="504368962549926">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950446261131771" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Enemy" sid="913870453864646">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Life" sid="675720948262040" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="580992762614246">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="850296132849021">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="199805962083352" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="711957963851144">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="804227386656497">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="smg_bullet" pingpong="0" repeatcount="1" repeatto="0" sid="218279479071131" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="C:\Users\rolim\Downloads\Polimento Top Down\Bala_Metralhadora.png">
+                        <collision-poly>
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.8125" y="0.5" />
+                            <point x="0.6875" y="0.6875" />
+                            <point x="0.3125" y="0.6875" />
+                            <point x="0.1875" y="0.490234" />
+                            <point x="0.3125" y="0.3125" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="bazooka_bullet" pingpong="0" repeatcount="1" repeatto="0" sid="661000257117168" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="C:\Users\rolim\Downloads\Polimento Top Down\Bala_Bazooka.png">
+                        <collision-poly>
+                            <point x="0" y="0.30625" />
+                            <point x="0.461538" y="0.3" />
+                            <point x="0.769231" y="0.3" />
+                            <point x="1" y="0.5" />
+                            <point x="0.769231" y="0.7" />
+                            <point x="0.461538" y="0.7" />
+                            <point x="0" y="0.69375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="192801343245483">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="438138065704203">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="obj_box" sid="829716395503393">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="161759055128535">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="612298522760028" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HouseG" sid="218188261034385">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="750143723197258">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="747388091004728" speed="5">
+                    <frame duration="1" hotspotX="0.502513" hotspotY="0.502825" original-source="C:\Users\rolim\Downloads\Houses-removebg-preview.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HouseR" sid="999765380501475">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="837358411272354">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="291650084904590" speed="5">
+                    <frame duration="1" hotspotX="0.502513" hotspotY="0.502825" original-source="C:\Users\rolim\Downloads\Houses-removebg-preview.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HouseB" sid="335505238520396">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="930458440435531">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="948488137832005" speed="5">
+                    <frame duration="1" hotspotX="1.03125" hotspotY="-0.147541" original-source="C:\Users\rolim\Downloads\Houses-removebg-preview.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HouseY" sid="377864412467356">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="235003840692732" speed="5">
+                    <frame duration="1" hotspotX="0.503401" hotspotY="0.502283" original-source="C:\Users\rolim\Downloads\Houses-removebg-preview.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Portal" sid="318296855953590">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="130743961439033">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="404907974129563" speed="5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.655172" original-source="C:\Users\rolim\Downloads\Portal.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Player_anim" sid="680107373440616">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="walk_d" pingpong="0" repeatcount="1" repeatto="0" sid="612831916853262" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
+                        <collision-poly>
+                            <point x="0" y="0.238095" />
+                            <point x="1" y="0.238095" />
+                            <point x="1" y="0.47619" />
+                            <point x="1" y="0.714286" />
+                            <point x="0" y="0.809524" />
+                            <point x="0" y="0.47619" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="0" name="walk_u" pingpong="0" repeatcount="1" repeatto="0" sid="404836714913236" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.5" y="0.75" />
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="0" name="walk_l" pingpong="0" repeatcount="1" repeatto="0" sid="505839044883439" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="0" name="walk_r" pingpong="0" repeatcount="1" repeatto="0" sid="560636889104954" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Gun" sid="714173272355210">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="smg" pingpong="0" repeatcount="1" repeatto="0" sid="797444646963119" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="C:\Users\rolim\Downloads\Polimento Top Down\Arma_Metralhadora.png">
+                        <image-point name="Imagepoint 1" x="1" y="0.5" />
+                        <collision-poly>
+                            <point x="0.136364" y="0.3" />
+                            <point x="0.5" y="0.1" />
+                            <point x="0.909091" y="0.2" />
+                            <point x="0.954545" y="0.5" />
+                            <point x="0.863636" y="0.7" />
+                            <point x="0.5" y="0.9" />
+                            <point x="0.0909091" y="0.8" />
+                            <point x="0.0454545" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="bazooka" pingpong="0" repeatcount="1" repeatto="0" sid="284594539316430" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.555556" original-source="C:\Users\rolim\Downloads\Polimento Top Down\Arma_Bazooka.png">
+                        <image-point name="Imagepoint 1" x="1" y="0.555556" />
+                        <collision-poly>
+                            <point x="0.047619" y="0.111111" />
+                            <point x="0.47619" y="0" />
+                            <point x="0.952381" y="0.111111" />
+                            <point x="1" y="0.444444" />
+                            <point x="0.857143" y="0.666667" />
+                            <point x="0.47619" y="0.888889" />
+                            <point x="0.047619" y="0.888889" />
+                            <point x="0" y="0.444444" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tilemap2" sid="398546872114511">
+            <plugin id="Tilemap" />
+            <texture />
+            <tiles />
+        </object-type>
+        <object-type name="whiteflashlight" sid="836278365143320">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="250185588673770" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500606" original-source="C:\Users\rolim\Downloads\white-flash-light.png">
+                        <collision-poly>
+                            <point x="0.289157" y="0.290909" />
+                            <point x="0.5" y="0.201212" />
+                            <point x="0.712048" y="0.289697" />
+                            <point x="0.8" y="0.499394" />
+                            <point x="0.714458" y="0.712727" />
+                            <point x="0.5" y="0.804848" />
+                            <point x="0.285542" y="0.712727" />
+                            <point x="0.201205" y="0.499394" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Cam" sid="888971917699015">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="730630816599791">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="196366758915873" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Mouse" uid="4" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
